@@ -26,6 +26,7 @@ public class MainActivity extends ActionBarActivity implements Toolbar.OnMenuIte
     private Button button;
     private Toolbar toolbar;
     private Button returnValues;
+    private TextView textView;
     private TextView showResult;
 
     @Override
