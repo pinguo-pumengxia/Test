@@ -19,7 +19,7 @@ android {
     }
 
     lintOptions {
-        xmlReport false
+        xmlReport true
         // 用于写入报告的文件（如果不指定，默认为lint-results.xml）
     }
 }
