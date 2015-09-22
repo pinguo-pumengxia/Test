@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 import com.test.pmx.two.FragActivity;
 
-@SuppressLint("all")
 public class MainActivity extends ActionBarActivity implements Toolbar.OnMenuItemClickListener {
     private Button button;
     private Toolbar toolbar;
