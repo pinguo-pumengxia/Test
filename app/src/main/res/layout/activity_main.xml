@@ -16,8 +16,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="10dp"
         android:text="跳转" />
+
+    <Button
+        android:id="@+id/return_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginTop="10dp"
+        android:text="另外一个App" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floating"
@@ -39,6 +47,14 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/showResult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="wwww"
+        android:textColor="#000000"
+        android:textSize="21sp" />
 
 
 </LinearLayout>

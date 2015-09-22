@@ -1,5 +1,6 @@
 package com.test.pmx.test;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.test.pmx.two.FragActivity;
@@ -23,6 +25,8 @@ import com.test.pmx.two.FragActivity;
 public class MainActivity extends ActionBarActivity implements Toolbar.OnMenuItemClickListener {
     private Button button;
     private Toolbar toolbar;
+    private Button returnValues;
+    private TextView showResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +87,32 @@ public class MainActivity extends ActionBarActivity implements Toolbar.OnMenuIte
         toolbar.setNavigationIcon(android.R.drawable.ic_input_delete);
         toolbar.setOnMenuItemClickListener(this);
 
+        returnValues = (Button)findViewById(R.id.return_value);
+        showResult = (TextView)findViewById(R.id.showResult);
+        returnValues.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setType("text/");
+                startActivityForResult(intent,2);
+            }
+        });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case 2:
+                switch (resultCode){
+                    case Activity.RESULT_OK:
+                        showResult.setText("URI:"+ data.getDataString());
+                        break;
+                }
+                break;
+        }
     }
 
     @Override
