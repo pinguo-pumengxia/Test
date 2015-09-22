@@ -19,9 +19,8 @@ android {
     }
 
     lintOptions {
-        // Don't abort if Lint finds an error, otherwise the Jenkins build
-        // will be marked as failed, and Jenkins won't analyse the Lint output
-        abortOnError false
+        xmlReport false
+        // 用于写入报告的文件（如果不指定，默认为lint-results.xml）
     }
 }
 
