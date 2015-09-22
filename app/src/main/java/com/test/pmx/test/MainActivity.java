@@ -1,5 +1,6 @@
 package com.test.pmx.test;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -21,7 +22,7 @@ import android.widget.Toast;
 
 import com.test.pmx.two.FragActivity;
 
-
+@SuppressLint("all")
 public class MainActivity extends ActionBarActivity implements Toolbar.OnMenuItemClickListener {
     private Button button;
     private Toolbar toolbar;
