@@ -26,7 +26,7 @@ packer {
     // 指定渠道打包输出文件名格式
     archiveNameFormat = 'Test_v${versionName}_${flavorName}_${\' + System.currentTimeMillis() + \'}${versionCode}'
     // 指定渠道打包需要修改的AndroidManifest文件项
-    manifestMatcher = ['UMENG_CHANNEL','Promotion_Market']
+    manifestMatcher = ['UMENG_CHANNEL', 'Promotion_Market']
     // 指定是否使用build版本号自增
     buildNumberAuto = true
     // 指定使用版本号自增的buildType，默认是全部
