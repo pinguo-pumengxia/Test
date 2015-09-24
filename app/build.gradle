@@ -82,14 +82,31 @@ android {
     }
 
     findbugs {
-        toolVersion = "2.0.1"
+        sourceSets = []
         ignoreFailures = true
-        effort = "max"
-        reportLevel = "high"
-        visitors = ["FindSqlInjection", "SwitchFallthrough"]
-        omitVisitors = ["FindNonShortCircuit"]
-        includeFilter = file("$rootProject.projectDir/config/findbugs/includeFilter.xml")
-        excludeFilter = file("$rootProject.projectDir/config/findbugs/excludeFilter.xml")
+    }
+
+    task findbugs(type: FindBugs, dependsOn: assembleDebug) {
+
+        description 'Run findbugs'
+        group 'verification'
+
+        classes = fileTree('build/intermediates/classes/debug/')
+        source = fileTree('src/main/java')
+        classpath = files()
+
+        effort = 'max'
+
+        excludeFilter = file("./config/findbugs/exclude.xml")
+
+        reports {
+            xml.enabled = true
+            html.enabled = false
+        }
+    }
+
+    check.doLast {
+        project.tasks.getByName("findbugs").execute()
     }
 
 }
