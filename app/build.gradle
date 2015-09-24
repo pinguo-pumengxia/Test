@@ -17,6 +17,8 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'packer'
 
+apply plugin: 'findbugs'
+
 
 packer {
     // 指定渠道打包输出目录
@@ -78,6 +80,18 @@ android {
         // 用于写入报告的文件（如果不指定，默认为lint-results.xml）
         xmlOutput file("lint-results.xml")
     }
+
+    findbugs {
+        toolVersion = "2.0.1"
+        ignoreFailures = true
+        effort = "max"
+        reportLevel = "high"
+        visitors = ["FindSqlInjection", "SwitchFallthrough"]
+        omitVisitors = ["FindNonShortCircuit"]
+        includeFilter = file("$rootProject.projectDir/config/findbugs/includeFilter.xml")
+        excludeFilter = file("$rootProject.projectDir/config/findbugs/excludeFilter.xml")
+    }
+
 }
 
 dependencies {
