@@ -50,7 +50,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="105"
+            line="116"
             column="5"/>
     </issue>
 
@@ -67,7 +67,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="110"
+            line="121"
             column="5"/>
     </issue>
 
@@ -84,7 +84,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="105"
+            line="116"
             column="5"/>
     </issue>
 
@@ -101,7 +101,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="107"
+            line="118"
             column="5"/>
     </issue>
 
@@ -118,7 +118,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="108"
+            line="119"
             column="5"/>
     </issue>
 
@@ -135,7 +135,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="109"
+            line="120"
             column="5"/>
     </issue>
 
@@ -152,7 +152,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="110"
+            line="121"
             column="5"/>
     </issue>
 
