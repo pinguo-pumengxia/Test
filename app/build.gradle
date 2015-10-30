@@ -19,6 +19,8 @@ apply plugin: 'packer'
 
 apply plugin: 'findbugs'
 
+apply plugin: 'pmd'
+
 
 packer {
     // 指定渠道打包输出目录
@@ -42,13 +44,13 @@ repositories {
 }
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 22
     buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.test.pmx.test"
         minSdkVersion 15
-        targetSdkVersion 21
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -105,8 +107,20 @@ android {
         }
     }
 
+    task pmd (type: Pmd, dependsOn: assembleDebug) {
+        description 'Run pmd'
+        group 'verification'
+        ruleSets = ["basic", "braces", "strings", "design", "unusedcode"]
+        source = fileTree('src/main/java')
+        reports {
+            xml.enabled = false
+            html.enabled = true
+        }
+    }
+
     check.doLast {
         project.tasks.getByName("findbugs").execute()
+        project.tasks.getByName("pmd").execute()
     }
 
 }
