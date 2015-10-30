@@ -112,7 +112,6 @@ android {
         description 'Run pmd'
         group 'verification'
         source = fileTree('src/main/java')
-        ruleSetFiles =files("${project.rootDir}/app/PmdRuleSets.xml")
         ruleSets = ["java-android"]
         reports {
             xml.enabled = false

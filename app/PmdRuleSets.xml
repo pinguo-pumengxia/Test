@@ -1,99 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <rules>
-    <!-- PMD 4.2.5 -->
-    <rule key="AvoidThrowingNewInstanceOfSameException">
-        <priority>MAJOR</priority>
-        <name><![CDATA[Strict Exception - Avoid throwing new instance of same exception]]></name>
-        <configKey>rulesets/strictexception.xml/AvoidThrowingNewInstanceOfSameException</configKey>
-
-        <description>
-            <![CDATA[Catch blocks that merely rethrow a caught exception wrapped inside a new instance of the same type only add to code size and runtime complexity. Example :
-<pre>
-public class Foo {
-  void bar() {
-    try {
-      // do something
-    }  catch (SomeException se) {
-      // harmless comment
-      throw new SomeException(se);
-    }
-  }
-}
-</pre>]]></description>
-    </rule>
-
-    <rule key="CallSuperFirst">
-        <priority>MAJOR</priority>
-        <name><![CDATA[Android - call super first]]></name>
-        <configKey>rulesets/android.xml/CallSuperFirst</configKey>
-
-        <description>
-            <![CDATA[Super should be called at the start of the method. Example :
-<pre>
-public class DummyActivity extends Activity {
-  public void onCreate(Bundle bundle) {
-    // missing call to super.onCreate(bundle)
-    foo();
-  }
-}
-</pre>]]></description>
-    </rule>
-
-    <rule key="CallSuperLast">
-        <priority>MAJOR</priority>
-        <name><![CDATA[Android - call super last]]></name>
-        <configKey>rulesets/android.xml/CallSuperLast</configKey>
-
-        <description>
-            <![CDATA[Super should be called at the end of the method. Example :
-<pre>
-public class DummyActivity extends Activity {
-  public void onPause() {
-    foo();
-    // missing call to super.onPause()
-  }
-}
-</pre>]]></description>
-    </rule>
-
-    <rule key="ProtectLogD">
-        <priority>MAJOR</priority>
-        <name><![CDATA[Android - Protect LOGD]]></name>
-        <configKey>rulesets/android.xml/ProtectLogD</configKey>
-
-        <description>
-            <![CDATA[Log.d calls should be protected by checking Config.LOGD first. Example :
-<pre>
-public class DummyActivity extends Activity {
-  public void foo() {
-    Log.d("TAG", "msg1"); // Bad
-
-    bar();
-
-    if (Config.LOGD) Log.d("TAG", "msg1"); // Good
-  }
-}
-</pre>]]></description>
-    </rule>
-
-    <rule key="ProtectLogV">
-        <priority>MAJOR</priority>
-        <name><![CDATA[Android - Protect LOGV]]></name>
-        <configKey>rulesets/android.xml/ProtectLogV</configKey>
-
-        <description>
-            <![CDATA[Log.v calls should be protected by checking Config.LOGV first. Example :
-<pre>
-public class DummyActivity extends Activity {
-  public void foo() {
-    Log.v("TAG", "msg1"); // Bad
-    bar();
-    if (Config.LOGV) Log.v("TAG", "msg1"); // Good
-  }
-}
-</pre>]]></description>
-    </rule>
-
-
     <!-- PMD 4.2.3 -->
     <rule key="EmptyInitializer">
         <priority>MAJOR</priority>
@@ -101,15 +7,13 @@ public class DummyActivity extends Activity {
         <configKey>rulesets/basic.xml/EmptyInitializer</configKey>
 
         <description>
-            <![CDATA[An empty initializer was found. Example :
-<pre>
+            <![CDATA[An empty initializer was found. Example :<pre>
 public class Foo {
-
    static {} // Why ?
-
    {} // Again, why ?
-
 }
-</pre>]]></description>
+
+</pre>]]>
+        </description>
     </rule>
 </rules>
