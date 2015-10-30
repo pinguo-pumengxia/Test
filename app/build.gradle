@@ -108,10 +108,12 @@ android {
     }
 
     task pmd (type: Pmd, dependsOn: assembleDebug) {
+        ignoreFailures = true
         description 'Run pmd'
         group 'verification'
-        ruleSets = ["basic", "braces", "strings", "design", "unusedcode"]
         source = fileTree('src/main/java')
+        ruleSetFiles =files("${project.rootDir}/PmdRuleSets.xml")
+        ruleSets = ["java-android"]
         reports {
             xml.enabled = false
             html.enabled = true
