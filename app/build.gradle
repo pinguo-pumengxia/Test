@@ -21,6 +21,8 @@ apply plugin: 'findbugs'
 
 apply plugin: 'pmd'
 
+apply from : "$projectDir/emma.gradle"
+
 
 packer {
     // 指定渠道打包输出目录
