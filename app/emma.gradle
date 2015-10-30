@@ -26,11 +26,11 @@ class EmmaPluginConvention{
         metaDataFilePath = "${tmpDir}/metadata.emma"
     }
 }
-android{
+check {
 // add EMMA related JVM args to our tests
  //   jvmArgs "-XX:-UseSplitVerifier", "-Demma.coverage.out.file=$buildDir/tmp/emma/metadata.emma", "-Demma.coverage.out.merge=true"
-    check.doFirst {
-                                                             //   println "Instrumenting the classes at " + sourceSets.main.output.classesDir.absolutePath
+    doFirst {
+        println "Instrumenting the classes at " + sourceSets.main.output.classesDir.absolutePath
 // define the custom EMMA ant tasks
         ant.taskdef( resource:"emma_ant.properties", classpath: configurations.emma.asPath)
         ant.path(id:"run.classpath") {
@@ -53,7 +53,7 @@ android{
 // The report should be generated directly after the tests are done.
 // We create three types (txt, html, xml) of reports here. Running your build script now should
 // result in output like that:
-    check.doLast {
+    doLast {
         def srcDir = sourceSets.main.java.srcDirs.toArray()[0]
         println "Creating test coverage reports for classes " + srcDir
         def emmaInstDir = new File(sourceSets.main.output.classesDir.parentFile.parentFile, "tmp/emma")
