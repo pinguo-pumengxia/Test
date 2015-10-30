@@ -2,6 +2,27 @@
 <issues format="4" by="lint 24.3.4">
 
     <issue
+        id="OldTargetApi"
+        severity="Warning"
+        message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details."
+        category="Correctness"
+        priority="6"
+        summary="Target SDK attribute is not targeting latest version"
+        explanation="When your application runs on a version of Android that is more recent than your `targetSdkVersion` specifies that it has been tested with, various compatibility modes kick in. This ensures that your application continues to work, but it may look out of place. For example, if the `targetSdkVersion` is less than 14, your app may get an option button in the UI.
+
+To fix this issue, set the `targetSdkVersion` to the highest available value. Then test your app to make sure everything works correctly. You may want to consult the compatibility notes to see what changes apply to each version you are adding support for: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        url="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        urls="http://developer.android.com/reference/android/os/Build.VERSION_CODES.html"
+        errorLine1="        targetSdkVersion 22"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/ws-pumengxia/share/Test/app/build.gradle"
+            line="55"
+            column="9"/>
+    </issue>
+
+    <issue
         id="ShowToast"
         severity="Warning"
         message="Toast created but not shown: did you forget to call `show()` ?"
@@ -24,7 +45,7 @@
         category="Correctness"
         priority="6"
         summary="Attribute unused on older versions"
-        explanation="This check finds attributes set in XML files that were introduced in a version newer than the oldest version targeted by your application (with the the `minSdkVersion` attribute).
+        explanation="This check finds attributes set in XML files that were introduced in a version newer than the oldest version targeted by your application (with the `minSdkVersion` attribute).
 
 This is not an error; the application will simply ignore the attribute. However, if the attribute is important to the appearance of functionality of your application, you should consider finding an alternative way to achieve the same result with only available attributes, and then you can optionally create a copy of the layout in a layout-vNN folder which will be used on API NN or higher where you can take advantage of the newer attribute.
 
@@ -40,6 +61,23 @@ Note: This check does not only apply to attributes. For example, some tags can b
     <issue
         id="GradleDependency"
         severity="Warning"
+        message="A newer version of com.android.tools.build:gradle than 1.0.0 is available: 1.2.3"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="        classpath &apos;com.android.tools.build:gradle:1.0.0&apos;"
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/ws-pumengxia/share/Test/app/build.gradle"
+            line="6"
+            column="9"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
         message="A newer version of com.android.support:appcompat-v7 than 22.0.+ is available: 23.0.1"
         category="Correctness"
         priority="4"
@@ -50,7 +88,75 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="116"
+            line="133"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:design than 22.2.0 is available: 23.0.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:design:22.2.0&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/ws-pumengxia/share/Test/app/build.gradle"
+            line="134"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:recyclerview-v7 than 22.0.+ is available: 23.0.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:recyclerview-v7:22.0.+&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/ws-pumengxia/share/Test/app/build.gradle"
+            line="135"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:palette-v7 than 22.0.+ is available: 23.0.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:palette-v7:22.0.+&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/ws-pumengxia/share/Test/app/build.gradle"
+            line="136"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of com.android.support:cardview-v7 than 22.0.+ is available: 23.0.1"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    compile &apos;com.android.support:cardview-v7:22.0.+&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        quickfix="studio">
+        <location
+            file="/home/ws-pumengxia/share/Test/app/build.gradle"
+            line="137"
             column="5"/>
     </issue>
 
@@ -67,7 +173,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="121"
+            line="138"
             column="5"/>
     </issue>
 
@@ -84,7 +190,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="116"
+            line="133"
             column="5"/>
     </issue>
 
@@ -101,7 +207,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="118"
+            line="135"
             column="5"/>
     </issue>
 
@@ -118,7 +224,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="119"
+            line="136"
             column="5"/>
     </issue>
 
@@ -135,7 +241,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="120"
+            line="137"
             column="5"/>
     </issue>
 
@@ -152,7 +258,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="121"
+            line="138"
             column="5"/>
     </issue>
 
@@ -341,6 +447,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         priority="3"
         summary="Missing density folder"
         explanation="Icons will look best if a custom version is provided for each of the major screen density classes (low, medium, high, extra-high, extra-extra-high). This lint check identifies folders which are missing, such as `drawable-hdpi`.
+
 Low density is not really used much anymore, so this check ignores the ldpi density. To force lint to include it, set the environment variable `ANDROID_LINT_INCLUDE_LDPI=true`. For more information on current density usage, see http://developer.android.com/resources/dashboard/screens.html"
         url="http://developer.android.com/guide/practices/screens_support.html"
         urls="http://developer.android.com/guide/practices/screens_support.html">
@@ -634,10 +741,12 @@ In Android Studio and Eclipse there are quickfixes to automatically extract this
         priority="5"
         summary="Using left/right instead of start/end attributes"
         explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
 For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
 (Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
         errorLine1="        android:layout_marginLeft=&quot;10dip&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/home/ws-pumengxia/share/Test/app/src/main/res/layout/activity_main.xml"
             line="18"
@@ -652,10 +761,12 @@ For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStar
         priority="5"
         summary="Using left/right instead of start/end attributes"
         explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
 For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
 (Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
         errorLine1="        android:layout_marginLeft=&quot;10dip&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/home/ws-pumengxia/share/Test/app/src/main/res/layout/activity_main.xml"
             line="26"
@@ -670,10 +781,12 @@ For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStar
         priority="5"
         summary="Using left/right instead of start/end attributes"
         explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.
+
 For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. *NOTE*: If your `minSdkVersion` is less than 17, you should add *both* the older left/right attributes *as well as* the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.
+
 (Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
         errorLine1="        android:layout_marginLeft=&quot;20dip&quot;"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/home/ws-pumengxia/share/Test/app/src/main/res/layout/activity_main.xml"
             line="34"
