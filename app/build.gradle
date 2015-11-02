@@ -122,7 +122,7 @@ android {
 
    task checkstyle (type: Checkstyle) {
        ignoreFailures = true
-       configFile rootProject.file('checkstyle.xml') // points to your checkstyle config
+       configFile rootProject.file('"$projectDir/checkstyle.xml') // points to your checkstyle config
        reports {
            xml.enabled = true
        }
