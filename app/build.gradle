@@ -114,6 +114,7 @@ android {
     }
 
     task pmd (type: Pmd, dependsOn: assembleDebug) {
+        ruleSetFiles = files("${project.rootDir}/app/pmd/pmd-ruleset.xml")
         ignoreFailures = true
         description 'Run pmd'
         group 'verification'
@@ -137,7 +138,7 @@ android {
     }
 
     check.doLast {
-     //   project.tasks.getByName("findbugs").execute()
+        project.tasks.getByName("findbugs").execute()
         project.tasks.getByName("pmd").execute()
         project.tasks.getByName("checkstyle").execute()
     }
