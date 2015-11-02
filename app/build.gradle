@@ -114,7 +114,7 @@ android {
     }
 
     task pmd (type: Pmd, dependsOn: assembleDebug) {
-        ruleSetFiles = files("${project.rootDir}/app/pmd/pmd-ruleset.xml")
+        ruleSetFiles = files("${project.rootDir}/app/pmd-ruleset.xml")
         ignoreFailures = true
         description 'Run pmd'
         group 'verification'
