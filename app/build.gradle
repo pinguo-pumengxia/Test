@@ -121,8 +121,8 @@ android {
         source = fileTree('src/main/java')
         ruleSets = ["java-android"]
         reports {
-            xml.enabled = false
-            html.enabled = true
+            xml.enabled = true
+            html.enabled = false
         }
     }
 
