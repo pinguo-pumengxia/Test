@@ -1,13 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <!DOCTYPE module PUBLIC
     "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
     "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
 
 <module name="Checker">
     <property name="severity" value="warning"/>
-    <module name="StrictDuplicateCode">
-        <property name="charset" value="utf-8" />
-    </module>
 
     <module name="TreeWalker">
         <!-- javadoc的检查 -->
@@ -39,10 +36,6 @@
         <module name="UnusedImports" />
 
         <!-- 长度方面的检查 -->
-        <!-- 文件长度不超过1500行 -->
-        <module name="FileLength">
-            <property name="max" value="1500" />
-        </module>
         <!-- 每行不超过150个字-->
         <module name="LineLength">
             <property name="max" value="150" />
@@ -65,9 +58,9 @@
         <module name="TypecastParenPad" />
 
         <!-- 关键字 -->
-        <!--
-            每个关键字都有正确的出现顺序。比如 public static final XXX 是对一个常量的声明。如果使用 static
-            public final 就是错误的
+        <!--   
+            每个关键字都有正确的出现顺序。比如 public static final XXX 是对一个常量的声明。如果使用 static 
+            public final 就是错误的   
         -->
         <module name="ModifierOrder" />
         <!-- 多余的关键字 -->
@@ -117,12 +110,12 @@
             <property name="max" value="3" />
             <property name="format" value="^$" />
         </module>
-        <!--
-            根据 Sun 编码规范， class 或 interface 中的顺序如下： 1.class 声明。首先是 public,
-            然后是protected , 然后是 package level （不包括access modifier ） 最后是private .
-            (多个class放在一个java文件中的情况） 2.变量声明。 首先是 public, 然后是protected然后是 package
-            level （不包括access modifier ） 最后是private . (多个class放在一个java文件中的情况）
-            3.构造函数 4.方法
+        <!--   
+            根据 Sun 编码规范， class 或 interface 中的顺序如下： 1.class 声明。首先是 public,   
+            然后是protected , 然后是 package level （不包括access modifier ） 最后是private .   
+            (多个class放在一个java文件中的情况） 2.变量声明。 首先是 public, 然后是protected然后是 package 
+            level （不包括access modifier ） 最后是private . (多个class放在一个java文件中的情况）   
+            3.构造函数 4.方法   
         -->
         <module name="DeclarationOrder" />
         <!-- 同一行不能有多个声明 -->
@@ -132,9 +125,10 @@
 
         <!-- 杂项 -->
         <!-- 禁止使用System.out.println -->
-        <module name="GenericIllegalRegexp">
-            <property name="format" value="System\.out\.println" />
-            <property name="ignoreComments" value="true" />
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="\s+$"/>
+            <property name="message" value="Line has trailing spaces."/>
+            <property name="ignoreComments" value="true"/>
         </module>
         <!-- 检查并确保所有的常量中的L都是大写的。因为小写的字母l跟数字1太象了 -->
         <module name="UpperEll" />
@@ -143,4 +137,9 @@
         <!-- 检查java代码的缩进 默认配置：基本缩进 4个空格，新行的大括号：0。新行的case 4个空格 -->
         <module name="Indentation" />
     </module>
-</module>
+    <!-- 文件长度不超过1500行 -->
+    <module name="FileLength">
+        <property name="max" value="1500" />
+    </module>
+
+</module>        

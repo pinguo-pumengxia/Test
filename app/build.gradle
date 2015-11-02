@@ -90,6 +90,11 @@ android {
         ignoreFailures = true
     }
 
+    checkstyle {
+        toolVersion '6.1.1'
+        showViolations true
+    }
+
     task findbugs(type: FindBugs, dependsOn: assembleDebug) {
 
         description 'Run findbugs'
@@ -120,12 +125,15 @@ android {
         }
     }
 
-   task checkstyle (type: Checkstyle) {
-       ignoreFailures = true
-       configFile rootProject.file('"$projectDir/checkstyle.xml') // points to your checkstyle config
-       reports {
-           xml.enabled = true
-       }
+    task checkstyle(type: Checkstyle) {
+        configFile file("${project.rootDir}/app/checkstyle.xml") // Where my checkstyle config is...
+        source 'src'
+        include '**/*.java'
+        exclude '**/gen/**'
+        classpath = files()
+        reports {
+            xml.enabled = true
+        }
     }
 
     check.doLast {
