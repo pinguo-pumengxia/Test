@@ -88,7 +88,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="133"
+            line="141"
             column="5"/>
     </issue>
 
@@ -105,7 +105,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="134"
+            line="142"
             column="5"/>
     </issue>
 
@@ -122,7 +122,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="135"
+            line="143"
             column="5"/>
     </issue>
 
@@ -139,7 +139,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="136"
+            line="144"
             column="5"/>
     </issue>
 
@@ -156,7 +156,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="137"
+            line="145"
             column="5"/>
     </issue>
 
@@ -173,7 +173,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="138"
+            line="146"
             column="5"/>
     </issue>
 
@@ -190,7 +190,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="133"
+            line="141"
             column="5"/>
     </issue>
 
@@ -207,7 +207,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="135"
+            line="143"
             column="5"/>
     </issue>
 
@@ -224,7 +224,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="136"
+            line="144"
             column="5"/>
     </issue>
 
@@ -241,7 +241,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="137"
+            line="145"
             column="5"/>
     </issue>
 
@@ -258,7 +258,7 @@ Note: This check does not only apply to attributes. For example, some tags can b
         quickfix="studio">
         <location
             file="/home/ws-pumengxia/share/Test/app/build.gradle"
-            line="138"
+            line="146"
             column="5"/>
     </issue>
 
